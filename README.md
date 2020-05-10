@@ -10,6 +10,11 @@ Template 'quick start' project
 
 ### Setup
 
+0. **Optional to avoid GIT dependencies on the repo** <br/>
+Go to https://github.com/benfro/gradle-template, 
+choose __Clone or download__ => __Download ZIP__ and extract on your disk.
+Import into the IDE of your choice.
+
 1. Change to your preferred name in file 'settings-gradle'
 
         rootProject.name = 'gradle-template'
