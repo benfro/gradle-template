@@ -35,7 +35,7 @@ TIP:
     If you run IDEA and want to create project setups for it:
     
     // id 'idea' <== uncomment this in file 'build.gradle'
-    and run __gradle idea__
+    and run **gradle idea**
 
 ### Resources
 
