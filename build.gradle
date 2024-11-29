@@ -6,7 +6,7 @@ buildscript {
 }
 
 plugins {
-    id 'java'
+    id 'application'
     id 'maven-publish'
     // id 'idea'
 }
@@ -14,19 +14,33 @@ plugins {
 group 'net.benfro'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
-
 repositories {
     mavenLocal()
     mavenCentral()
 }
 
 dependencies {
-    implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
-    implementation group: 'commons-io', name: 'commons-io', version: '2.11.0'
-    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
-    testImplementation group: 'org.mockito', name: 'mockito-core', version: '4.6.1'
-    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter', version: '5.8.2'
+    implementation 'com.google.guava:guava:32.1-jre'
+    implementation 'commons-io:commons-io:2.14.0'
+    implementation 'org.apache.commons::commons-lang3:3.14.0'
+
+    implementation 'io.projectreactor:reactor-bom:2024.0.0'
+    implementation 'io.projectreactor:reactor-core'
+    implementation 'io.projectreactor.netty:reactor-netty-core'
+    implementation 'io.projectreactor.netty:reactor-netty-http'
+
+    implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+
+    implementation 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor "org.projectlombok:lombok:1.18.30"
+
+    annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+
+    testImplementation 'org.mockito:mockito-core:4.6.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+    testImplementation 'org.assertj:assertj-core:3.26.3'
+    testImplementation 'io.projectreactor:reactor-test:'
 }
 
 test {
