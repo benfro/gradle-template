@@ -8,16 +8,15 @@ buildscript {
 plugins {
     id 'application'
     id 'maven-publish'
-    // id 'idea'
 }
-
-group 'net.benfro'
-version '1.0-SNAPSHOT'
 
 repositories {
     mavenLocal()
     mavenCentral()
 }
+
+group = 'net.benfro.lab'
+version = '1.0-SNAPSHOT'
 
 dependencies {
     implementation 'com.google.guava:guava:33.3.1-jre'
@@ -37,14 +36,20 @@ dependencies {
 
     annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
 
+    testImplementation platform('org.junit.jupiter:junit-jupiter:5.11.3')
     testImplementation 'org.mockito:mockito-core:4.6.1'
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
     testImplementation 'org.assertj:assertj-core:3.26.3'
     testImplementation 'io.projectreactor:reactor-test:'
 }
 
-test {
-    useJUnitPlatform()
+testing {
+    suites {
+        // Configure the built-in test suite
+        test {
+            // Use JUnit Jupiter test framework
+            useJUnitJupiter('5.10.3')
+        }
+    }
 }
 
 java {
@@ -57,3 +62,6 @@ application {
     // Define the main class for the application.
     //mainClass = 'org.example.App'
 }
+
+
+
